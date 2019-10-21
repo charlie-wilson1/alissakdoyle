@@ -20,6 +20,7 @@
     "@sanity/default-layout": "^0.142.7",
     "@sanity/default-login": "^0.142.6",
     "@sanity/desk-tool": "^0.142.8",
+    "mem": "^5.1.1",
     "prop-types": "^15.6",
     "react": "^16.2",
     "react-dom": "^16.2"
