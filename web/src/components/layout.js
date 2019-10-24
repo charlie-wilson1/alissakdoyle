@@ -8,32 +8,34 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { jsx, css } from '@emotion/core'
 
 import Header from "./header"
 import "./layout.css"
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
+
+const innerDiv = css`
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+`;
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
+  const { title } = useSiteMetadata(); 
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+      <Header siteTitle={title} />
+      <div css={innerDiv}>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
