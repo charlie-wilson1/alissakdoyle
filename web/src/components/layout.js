@@ -7,41 +7,35 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { jsx, css } from '@emotion/core'
+import { css } from '@emotion/core'
 
-import Header from "./header"
+import Header from "./Header"
 import "./layout.css"
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 const innerDiv = css`
-  width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.42);
+`;
+
+const mainStyles = css`
+  padding: 1rem;
+  box-sizing: border-box;
 `;
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
   const { title } = useSiteMetadata(); 
 
   return (
     <>
-      <Header siteTitle={title} />
       <div css={innerDiv}>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+      <Header siteTitle={title} />
+        <main css={mainStyles}>
+          {children}
+        </main>
       </div>
     </>
   )
