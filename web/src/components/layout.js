@@ -13,31 +13,55 @@ import Header from "./Header"
 import "./layout.css"
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
-const innerDiv = css`
-  max-width: 1100px;
-  margin: 0 auto;
-  background-color: white;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.42);
-`;
-
-const mainStyles = css`
-  padding: 1rem;
-  box-sizing: border-box;
-`;
-
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata(); 
 
+  const innerWrapperStyles = css`
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 1rem;
+    width: 1000px;
+    min-height: 100vh;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+  `;
+
+  const headerStyles = css`
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: inherit;
+    height: 100px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+  `;
+
+  const contentStyles = css`
+    box-sizing: border-box;
+    position: relative;
+    width: 1000px;
+    padding: 0 1rem;
+    top: 100px;
+  `;
+
   return (
-    <>
-      <div css={innerDiv}>
-      <Header siteTitle={title} />
-        <main css={mainStyles}>
+    <div css={innerWrapperStyles}>
+      <header css={headerStyles}>
+        <h1 css={css`text-align: center; width: 100%;`}>I'm the header</h1>
+      </header>
+      <div css={contentStyles}>
+        <content>
           {children}
-        </main>
+        </content>
       </div>
-    </>
+    </div>
   )
 }
 
