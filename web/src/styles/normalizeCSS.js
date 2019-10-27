@@ -13,8 +13,6 @@ const normalize = css`/*! normalize.css v8.0.1 | MIT License | github.com/necola
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  background-color: rgb(245, 245, 245);
-  font-family: 'Open Sans', sans-serif;
 }
 
 /* Sections

@@ -7,9 +7,10 @@ import Image from './Image';
 const HeightableDiv = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: ${props => props.heightOffset ? `${400 - props.heightOffset}px` : '400px'};
-  background-color: green;
+  height: 500px;
   overflow: hidden;
+  position: relative;
+  padding-top: 60px;
 `
 export default function HeaderImage() {
   const [ offset, setOffset ] = useState(0);

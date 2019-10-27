@@ -12,6 +12,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Open Sans:400, 700, 800']
+        }
+      }
+    },
+    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: '8n7w4ele',

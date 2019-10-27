@@ -1,5 +1,5 @@
 export default {
-  title: "Show",
+  title: "Show/Performance",
   name: 'show',
   type: 'document',
   fields: [
