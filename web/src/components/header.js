@@ -8,13 +8,15 @@ const headerStyles = css`
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  h1 {
+    font-family: sans-serif;
+  }
 `;
 
 const Header = ({ siteTitle }) => {
   return (
     <header css={headerStyles}>
-      <h1>
+      <h1 css={css`font-family: sans-serif;`}>
         {siteTitle}
       </h1>
     </header>

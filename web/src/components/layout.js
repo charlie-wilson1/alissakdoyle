@@ -7,19 +7,25 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { css } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 
-import Header from "./Header"
-import "./layout.css"
+// import Header from "./Header"
+// import "./layout.css"
+import normalize from './layout-styles.js';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 const Layout = ({ children }) => {
-  const { title } = useSiteMetadata(); 
+  const { title } = useSiteMetadata();
+
+  const globalStyles = css`
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+  `;
 
   const innerWrapperStyles = css`
     box-sizing: border-box;
     margin: 0 auto;
-    padding-top: 1rem;
+    padding-top: 0rem;
     width: 1000px;
     min-height: 100vh;
     background-color: white;
@@ -40,6 +46,7 @@ const Layout = ({ children }) => {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
     border-bottom: 1px solid lightgray;
   `;
 
@@ -47,14 +54,14 @@ const Layout = ({ children }) => {
     box-sizing: border-box;
     position: relative;
     width: 1000px;
-    padding: 0 1rem;
     top: 100px;
   `;
 
   return (
     <div css={innerWrapperStyles}>
+      <Global styles={normalize} />
       <header css={headerStyles}>
-        <h1 css={css`text-align: center; width: 100%;`}>I'm the header</h1>
+        <h1 css={css`text-align: center; width: 100%;`}>{title}</h1>
       </header>
       <div css={contentStyles}>
         <content>
