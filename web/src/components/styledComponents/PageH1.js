@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const pageHeaderStyles = css`
+  width: inherit;
   padding: 1rem 0;
   h2 {
     margin-bottom: 2rem;

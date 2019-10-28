@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby"
 import { css } from '@emotion/core';
 
 const navStyles = css`
@@ -22,10 +23,10 @@ const navStyles = css`
 const Nav = () => {
   return (
     <nav css={navStyles}>
-      <h3>Resume</h3>
-      <h3>About</h3>
-      <h3>Photos</h3>
-      <h3>Contact Me</h3>
+      <Link to='/'><h3>Resume</h3></Link>
+      <Link to='/about'><h3>About</h3></Link>
+      <Link to='/'><h3>Photos</h3></Link>
+      <Link to='/'><h3>Contact Me</h3></Link>
     </nav>
   );
 };

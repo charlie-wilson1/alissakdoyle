@@ -1,5 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/core';
 
@@ -9,6 +8,7 @@ import Image from '../components/Image';
 import PageTitle from '../components/styledComponents/PageTitle';
 import PageH1 from '../components/styledComponents/PageH1';
 import Performance from '../components/Performance';
+import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 
 const shrinkingImage = css`
   position: relative;
@@ -45,7 +45,7 @@ const IndexPage = () => {
   return (
   <Layout>
     <SEO title="Home" />
-    <div>
+    <ContentWidthContainer>
       <div css={shrinkingImage}>
         <Image />
       </div>
@@ -63,9 +63,13 @@ const IndexPage = () => {
         ))}
         <PageH1 text={'Teaching & Directing'} />
         <PageH1 text={'Education & Training'} />
+        <div css={css`p {margin: 0.6rem 0;}`}>
+          <p css={css`font-weight: 800;`}>Bachelor of Arts, Theatre</p>
+          <p>Emphasis in Acting</p>
+          <p>California State University Sacramento</p>
+        </div>
       </div>
-    </div>
-    
+    </ContentWidthContainer>  
   </Layout>
 )}
 
