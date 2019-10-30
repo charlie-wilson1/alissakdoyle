@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import directing from './directing';
 import quote from './quote';
 import show from './show';
+import media from './media';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,5 +21,6 @@ export default createSchema({
     directing,
     quote,
     show,
+    media
   ])
 })
