@@ -18,6 +18,10 @@ const navStyles = css`
     font-size: 0.9em;
     margin: 0 1rem;
   }
+  a {
+    text-decoration: none;
+    color: #343434;
+  }
 `;
 
 const Nav = () => {
@@ -26,7 +30,7 @@ const Nav = () => {
       <Link to='/'><h3>Resume</h3></Link>
       <Link to='/about'><h3>About</h3></Link>
       <Link to='/'><h3>Photos</h3></Link>
-      <Link to='/'><h3>Contact Me</h3></Link>
+      <Link to='/contact'><h3>Contact Me</h3></Link>
     </nav>
   );
 };

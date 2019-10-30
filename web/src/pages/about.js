@@ -33,7 +33,7 @@ const AboutPage = () => {
   return (
   <Layout>
     <SEO title="About" />
-    <ContentWidthContainer css={css`margin-top: 100px`}>
+    <ContentWidthContainer css={css`margin-top: 100px;`}>
       <PageTitle pageTitle={'About'} />
       <div css={content}>
         <h3>Quote DUMP</h3>
