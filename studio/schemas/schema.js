@@ -9,8 +9,10 @@ import directing from './directing';
 import quote from './quote';
 import show from './show';
 import media from './media';
-import image from './photo';
+import bio from './bio';
 import settings from './settings';
+import photo from './photo';
+import resume from './resume';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,11 +22,13 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    show,
     directing,
     quote,
-    show,
     media,
-    image,
+    bio,
     settings,
+    photo,
+    resume,
   ])
 })

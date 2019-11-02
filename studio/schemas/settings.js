@@ -1,5 +1,5 @@
 export default {
-  title: "Settings",
+  title: "Site Settings",
   name: 'settings',
   type: 'document',
   fields: [
@@ -17,7 +17,7 @@ export default {
     {
       title: "Featured Image",
       name: "featureImage",
-      type: "image",
+      type: "photo",
       description: "The image that will appear on the main page, above the resume."
     },
   ]

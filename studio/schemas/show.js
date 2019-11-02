@@ -1,6 +1,6 @@
 export default {
-  title: "Show/Performance",
-  name: 'show',
+  title: "Performance",
+  name: 'Performance',
   type: 'document',
   fields: [
     {

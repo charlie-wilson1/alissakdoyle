@@ -1,6 +1,6 @@
 export default {
-  title: "Quote",
-  name: 'quote',
+  title: "Quotes",
+  name: 'quotes',
   type: 'document',
   fields: [
     {

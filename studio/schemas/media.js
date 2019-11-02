@@ -1,6 +1,6 @@
 export default {
-  title: "Media",
-  name: 'media',
+  title: "Gallery Media",
+  name: 'gallery',
   type: 'document',
   fields: [
     {
@@ -14,8 +14,8 @@ export default {
       type: 'string'
     },
     {
-      title: 'Image',
-      name: 'photoImage',
+      title: 'Gallery Image',
+      name: 'galleryImage',
       type: 'photo',
     },
   ]
