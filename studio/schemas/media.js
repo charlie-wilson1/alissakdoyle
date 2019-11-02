@@ -4,9 +4,19 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Collection Title',
+      title: 'Title',
       name: 'title',
       type: 'string'
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'string'
+    },
+    {
+      title: 'Image',
+      name: 'photoImage',
+      type: 'photo',
     },
   ]
 };

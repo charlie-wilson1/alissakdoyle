@@ -12,12 +12,18 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "dashboard-widget-cats",
+    "@sanity/dashboard"
   ],
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
+    },
+    { 
+      "implements": "part:@sanity/dashboard/config", 
+      "path": "./dashboardConfig.js" 
     }
   ]
 }
