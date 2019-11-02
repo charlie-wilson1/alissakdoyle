@@ -10,6 +10,7 @@ import quote from './quote';
 import show from './show';
 import media from './media';
 import image from './photo';
+import settings from './settings';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,5 +25,6 @@ export default createSchema({
     show,
     media,
     image,
+    settings,
   ])
 })
