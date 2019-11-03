@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import Image from './Image';

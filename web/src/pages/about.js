@@ -68,8 +68,7 @@ const AboutPage = () => {
 
   const allQuotes = allSanityQuotes.edges.map(show => show.node);
   const bioTitle = allSanityBiography.edges[0].node.title;
-  const quote = allSanityBiography.edges[0].node._rawBiography[0].children[0].text;
-  console.log(quote);
+  
   return (
   <Layout>
     <SEO title="About" />
