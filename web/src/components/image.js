@@ -15,18 +15,40 @@ import Img from "gatsby-image"
 
 const Image = () => {
   const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+    # query {
+    #   placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    #     childImageSharp {
+    #       fluid(maxWidth: 300) {
+    #         ...GatsbyImageSharpFluid
+    #       }
+    #     }
+    #   }
+    # }
+    query MyQuery {
+      allSanitySettings {
+        edges {
+          node {
+            featureImage {
+              asset {
+                fluid(maxWidth: 900) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                }
+              }
+            }
           }
         }
       }
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  // return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.allSanitySettings.edges[0].node.featureImage.asset.fluid} imgStyle={{top: '-25%'}} />
 }
 
 export default Image

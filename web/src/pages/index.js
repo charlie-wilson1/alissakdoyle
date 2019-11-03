@@ -12,10 +12,15 @@ import ContentWidthContainer from '../components/styledComponents/ContentWidthCo
 
 const shrinkingImage = css`
   position: relative;
-  height: 300px;
+  height: 600px;
   width: inherit;
   overflow: hidden;
-  background-color: green;
+  @media screen and (max-width: 700px) {
+    height: 400px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 250px;
+  }
 `;
 
 const content = css`
@@ -23,10 +28,10 @@ const content = css`
 `;
 
 const IndexPage = () => {
-  const {allSanityShow: { edges }} = useStaticQuery(
+  const {allSanityPerformance: { edges }} = useStaticQuery(
     graphql`
-      query AllShows {
-        allSanityShow {
+      query AllPerformances {
+        allSanityPerformance {
           edges {
             node {
               id

@@ -2,10 +2,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 export const getAllPerformances = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const {allSanityShow: { edges }} = useStaticQuery(
+  const {allSanityPerformance: { edges }} = useStaticQuery(
     graphql`
       query getAllPerformances {
-        allSanityShow {
+        allSanityPerformance {
           edges {
             node {
               id

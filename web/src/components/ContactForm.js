@@ -52,29 +52,30 @@ const ContactForm = () => {
   return (
       <form css={form}>
         <div className='container'>
-          <label for="first-name">First Name</label>
-          <input type='text' name='first-name'></input>
+          <label for="first-name">First Name *</label>
+          <input type='text' name='first-name' required></input>
         </div>
 
         <div className='container'>
-          <label for="last-name">Last Name</label>
-          <input type='text' name='last-name'></input>
+          <label for="last-name">Last Name *</label>
+          <input type='text' name='last-name' required></input>
         </div>
 
         <div className='container'>
-          <label for="email">Email Address</label>
-          <input type='email' name='email'></input>
+          <label for="email">Email Address *</label>
+          <input type='email' name='email' required></input>
         </div>
 
         <div className='container'>
-          <label for="subject">Subject</label>
-          <input type='text' name='subject'></input>
+          <label for="subject">Subject *</label>
+          <input type='text' name='subject' required></input>
         </div>
 
         <div className='container'>
-          <label for="message">Message</label>
-          <textarea type='text' name='mssage'></textarea>
+          <label for="message">Message *</label>
+          <textarea type='text' name='mssage' required></textarea>
         </div>
+        <p css={css`margin-left: 1rem;`}>* required field</p>
         <input id='submit' type='submit'></input>
       </form>
   );
