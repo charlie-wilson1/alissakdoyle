@@ -29,7 +29,7 @@ const Nav = () => {
     <nav css={navStyles}>
       <Link to='/'><h3>Resume</h3></Link>
       <Link to='/about'><h3>About</h3></Link>
-      <Link to='/'><h3>Photos</h3></Link>
+      <Link to='/gallery'><h3>Gallery</h3></Link>
       <Link to='/contact'><h3 css={css`text-align: center;`}>Contact Me</h3></Link>
     </nav>
   );
