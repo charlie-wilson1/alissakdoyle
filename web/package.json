@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "alissakDoyle",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Resume for Alissa K Doyle",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ryan Doyle <doylecodes@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",

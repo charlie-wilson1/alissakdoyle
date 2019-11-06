@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
+import Image from '../components/Image';
 
 
 const content = css`
@@ -14,13 +15,24 @@ const content = css`
 const gallery = css`
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+
   .photo {
     background-color: green;
     box-sizing: border-box;
     border: 1px solid black;
     height: 200px;
-    width: 33%;
-    padding: 3%;
+    width: 30%;
+    margin: 1%;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 800px) {
+    .photo { width: 45%; }
+  }
+  @media screen and (max-width: 500px) {
+    .photo { width: 80%; }
   }
 `;
 
@@ -34,12 +46,12 @@ const GalleryPage = () => {
       <div css={content}>
         <p>photos here!</p>
         <div css={gallery}>
-          <div className='photo'>this div content</div>
-          <div className='photo'>this div content</div>
-          <div className='photo'>this div content</div>
-          <div className='photo'>this div content</div>
-          <div className='photo'>this div content</div>
-          <div className='photo'>this div content</div>
+          <div className='photo'><Image /></div>
+          <div className='photo'><Image /></div>
+          <div className='photo'><Image /></div>
+          <div className='photo'><Image /></div>
+          <div className='photo'><Image /></div>
+          <div className='photo'><Image /></div>
         </div>
       </div>
     </ContentWidthContainer>
