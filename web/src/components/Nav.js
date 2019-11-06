@@ -22,6 +22,12 @@ const navStyles = css`
     text-decoration: none;
     color: #343434;
   }
+  @media screen and (max-width: 374px) {
+    h3 {
+      font-size: 0.7em;
+      margin: 0 0.6rem;
+    }
+  }
 `;
 
 const Nav = () => {

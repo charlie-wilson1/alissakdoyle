@@ -5,8 +5,8 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
-import Image from '../components/Image';
-
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image"
 
 const content = css`
   padding: 5%;
@@ -21,7 +21,6 @@ const gallery = css`
   .photo {
     background-color: green;
     box-sizing: border-box;
-    border: 1px solid black;
     height: 200px;
     width: 30%;
     margin: 1%;
@@ -34,24 +33,53 @@ const gallery = css`
   @media screen and (max-width: 500px) {
     .photo { width: 80%; }
   }
+  @media screen and (max-width: 400px) {
+    .photo { width: 90%; }
+  }
 `;
 
 const GalleryPage = () => {
 
+  const galleryImages = useStaticQuery(
+    graphql`
+      query GalleryQuery {
+        allSanityGallery {
+          edges {
+            node {
+              id
+              galleryImage {
+                asset {
+                  fixed(height: 300, width: 300) {
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    aspectRatio
+                    base64
+                    height
+                    width
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  console.log(galleryImages);
   return (
   <Layout>
     <SEO title="About" />
     <ContentWidthContainer css={css`margin-top: 100px;`}>
       <PageTitle pageTitle={'Gallery'} />
       <div css={content}>
-        <p>photos here!</p>
         <div css={gallery}>
-          <div className='photo'><Image /></div>
-          <div className='photo'><Image /></div>
-          <div className='photo'><Image /></div>
-          <div className='photo'><Image /></div>
-          <div className='photo'><Image /></div>
-          <div className='photo'><Image /></div>
+          {galleryImages.allSanityGallery.edges.map(edge => (
+            <div className='photo'>
+              <Img fixed={edge.node.galleryImage.asset.fixed}></Img>
+            </div>
+          ))}
         </div>
       </div>
     </ContentWidthContainer>

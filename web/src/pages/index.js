@@ -21,6 +21,9 @@ const shrinkingImage = css`
   @media screen and (max-width: 500px) {
     height: 250px;
   }
+  @media screen and (max-width: 375px) {
+    height: 200px;
+  }
 `;
 
 const content = css`
