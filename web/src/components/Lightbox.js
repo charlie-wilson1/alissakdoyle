@@ -10,26 +10,17 @@ const lightboxShown = css`
   width: 100vw;
   z-index: 10;
   background-color: rgb(0, 0, 0, 0.9);
-  transition: background-color 1s;
+  transition: background-color 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
-  .lightboxImage {
-    width: 500px;
-    height: 750px;
-    background-color: white;
-  }
 `;
 
 const lightboxHidden = css`
   position: relative;
-  height: 100px;
-  width: 100px;
-  transition: background-color 1s;
-  .lightboxImage {
-    width: 100%;
-    height: 100%;
-  }
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.3s;
 `;
 
 const Lightbox = (props) => {
@@ -38,10 +29,10 @@ const Lightbox = (props) => {
   return (
     <div css={lightbox ? lightboxShown : lightboxHidden} {...props} onClick={(e) => {toggleLightbox(!lightbox); console.log(lightbox, e.currentTarget)}}>
       {lightboxShown && (
-        <div className='lightboxImage'>
+        <>
           {!lightbox && props.children}
-          <Img fixed={lightboxImage} id={lightboxImage}></Img>
-        </div>
+          <Img fixed={props.image} id={lightboxImage}></Img>
+        </>
       )}
     </div>
   );

@@ -53,7 +53,7 @@ const GalleryPage = () => {
                     height
                     width
                   }
-                  large: fixed(width: 600) {
+                  large: fixed(width: 300) {
                     src
                     srcSet
                     srcSetWebp
@@ -81,7 +81,7 @@ const GalleryPage = () => {
         <div css={gallery}>
           {galleryImages.allSanityGallery.edges.map(edge => (
             <div className='photo' id={edge.node.id}>
-              <Lightbox image={edge.node.galleryImage.asset.large}>
+              <Lightbox image={edge.node.galleryImage.asset.small}>
                 <Img fixed={edge.node.galleryImage.asset.small} id={edge.node.id}></Img>
               </Lightbox>
             </div>
