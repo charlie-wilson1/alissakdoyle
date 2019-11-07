@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
   const contentStyles = css`
     box-sizing: border-box;
     position: relative;
-    width: 1000px;
+    width: 100%;
     top: 100px;
   `;
 
