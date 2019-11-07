@@ -22,7 +22,10 @@ const navStyles = css`
     text-decoration: none;
     color: #343434;
   }
-  @media screen and (max-width: 374px) {
+  @media screen and (max-width: 380px) {
+    h1 {
+      font-size: 0.8em;
+    }
     h3 {
       font-size: 0.7em;
       margin: 0 0.6rem;

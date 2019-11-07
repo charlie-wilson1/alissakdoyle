@@ -6,7 +6,8 @@ import SEO from "../components/SEO"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image"
+import Img from "gatsby-image";
+import Lightbox from '../components/Lightbox';
 
 const content = css`
   padding: 5%;
@@ -19,23 +20,16 @@ const gallery = css`
   justify-content: center;
 
   .photo {
-    background-color: green;
     box-sizing: border-box;
-    height: 200px;
-    width: 30%;
+    height: 280px;
+    width: 280px;
     margin: 1%;
     overflow: hidden;
   }
 
-  @media screen and (max-width: 800px) {
-    .photo { width: 45%; }
-  }
-  @media screen and (max-width: 500px) {
-    .photo { width: 80%; }
-  }
-  @media screen and (max-width: 400px) {
-    .photo { width: 90%; }
-  }
+  /* @media screen and (max-width: 650px) {
+    .photo { width: 500px; }
+  } */
 `;
 
 const GalleryPage = () => {
@@ -49,7 +43,17 @@ const GalleryPage = () => {
               id
               galleryImage {
                 asset {
-                  fixed(height: 300, width: 300) {
+                  small: fixed(width: 300, height: 300) {
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    aspectRatio
+                    base64
+                    height
+                    width
+                  }
+                  large: fixed(width: 600) {
                     src
                     srcSet
                     srcSetWebp
@@ -76,8 +80,10 @@ const GalleryPage = () => {
       <div css={content}>
         <div css={gallery}>
           {galleryImages.allSanityGallery.edges.map(edge => (
-            <div className='photo'>
-              <Img fixed={edge.node.galleryImage.asset.fixed}></Img>
+            <div className='photo' id={edge.node.id}>
+              <Lightbox image={edge.node.galleryImage.asset.large}>
+                <Img fixed={edge.node.galleryImage.asset.small} id={edge.node.id}></Img>
+              </Lightbox>
             </div>
           ))}
         </div>

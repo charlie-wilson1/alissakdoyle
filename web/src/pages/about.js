@@ -14,22 +14,6 @@ const content = css`
 `;
 
 const AboutPage = () => {
-  // const {allSanityQuote: { edges }} = useStaticQuery(
-  //   graphql`
-  //     query QuoteQuery {
-  //       allSanityQuotes {
-  //         edges {
-  //           node {
-  //             id
-  //             quote
-  //             referrer
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // )
-  // const allQuotes = edges.map(show => show.node);
 
   const { allSanityQuotes, allSanityBiography }  = useStaticQuery(
     graphql`
