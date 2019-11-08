@@ -22,9 +22,9 @@ export default {
           // },
           {
             title: 'www.alissakdoyle.com',
-            apiId: 'yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy',
-            buildHookId: 'yyyyxxxxxyyyxxdxxx',
-            name: 'sanity-gatsby-blog-20-web'
+            apiId: '',
+            buildHookId: '',
+            name: 'Deploy alissakdoyle'
           }
         ]
       }

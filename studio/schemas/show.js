@@ -1,7 +1,10 @@
+import { MdRecordVoiceOver } from "react-icons/md";
+
 export default {
   title: "Performance",
   name: 'Performance',
   type: 'document',
+  icon: MdRecordVoiceOver,
   fields: [
     {
       title: "Show Title",
@@ -15,6 +18,11 @@ export default {
       description: "Role, or 'Various Roles'",
     },
     {
+      title: 'Start date',
+      name: 'startDate',
+      type: 'date'
+    },
+    {
       title: "Theatre",
       name: "theatre",
       type: "string",
@@ -23,8 +31,25 @@ export default {
     {
       title: "Director",
       name: "director",
-      type: "string",
-      description: "Name of director(s), followed by a comma and 'director' or 'directors'."
+      type: 'array',
+      of: [{type: 'string'}],
+      description: "Name of director(s)."
     },
-  ]
+  ],
+  orderings: [
+    {
+      title: 'Start Date, New',
+      name: 'startDateDesc',
+      by: [
+        {field: 'startDate.utc', direction: 'desc'}
+      ]
+    },
+    {
+      title: 'Start Date, Old',
+      name: 'startDateAsc',
+      by: [
+        {field: 'startDate.utc', direction: 'asc'}
+      ]
+    },
+  ],
 };

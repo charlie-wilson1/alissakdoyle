@@ -1,7 +1,10 @@
+import { MdCollections } from "react-icons/md";
+
 export default {
   title: "Gallery Media",
   name: 'gallery',
   type: 'document',
+  icon: MdCollections,
   fields: [
     {
       title: 'Title',
