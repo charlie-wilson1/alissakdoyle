@@ -18,18 +18,11 @@ const gallery = css`
   flex-wrap: wrap;
   overflow: hidden;
   justify-content: center;
+  position: relative;
 
   .photo {
-    box-sizing: border-box;
-    height: 280px;
-    width: 280px;
-    margin: 1%;
-    overflow: hidden;
+    position: relative;
   }
-
-  /* @media screen and (max-width: 650px) {
-    .photo { width: 500px; }
-  } */
 `;
 
 const GalleryPage = () => {
@@ -43,7 +36,7 @@ const GalleryPage = () => {
               id
               galleryImage {
                 asset {
-                  small: fixed(width: 300, height: 300) {
+                  thumbnail: fixed(width: 300, height: 300) {
                     src
                     srcSet
                     srcSetWebp
@@ -53,7 +46,27 @@ const GalleryPage = () => {
                     height
                     width
                   }
-                  large: fixed(width: 300) {
+                  mobile: fixed(width: 300) {
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    aspectRatio
+                    base64
+                    height
+                    width
+                  }
+                  tablet: fixed(width: 450) {
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    aspectRatio
+                    base64
+                    height
+                    width
+                  }
+                  large: fixed(width: 600) {
                     src
                     srcSet
                     srcSetWebp
@@ -71,25 +84,30 @@ const GalleryPage = () => {
       }
     `
   )
-  console.log(galleryImages);
+
   return (
-  <Layout>
-    <SEO title="About" />
-    <ContentWidthContainer css={css`margin-top: 100px;`}>
-      <PageTitle pageTitle={'Gallery'} />
-      <div css={content}>
-        <div css={gallery}>
-          {galleryImages.allSanityGallery.edges.map(edge => (
-            <div className='photo' id={edge.node.id}>
-              <Lightbox image={edge.node.galleryImage.asset.small}>
-                <Img fixed={edge.node.galleryImage.asset.small} id={edge.node.id}></Img>
-              </Lightbox>
-            </div>
-          ))}
+    <Layout>
+      <SEO title="About" />
+      <ContentWidthContainer css={css`margin-top: 100px;`}>
+        <PageTitle pageTitle={'Gallery'} />
+        <div css={content}>
+          <div css={gallery}>
+            {galleryImages.allSanityGallery.edges.map(edge => (
+              <div className='photo' key={edge.node.id}>
+                <Lightbox imageAssets={edge.node.galleryImage.asset} />
+                <Img 
+                  fixed={edge.node.galleryImage.asset.thumbnail}
+                  imgStyle={{
+                    padding: '5px',
+                    boxSizing: 'border-box',
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </ContentWidthContainer>
-  </Layout>
+      </ContentWidthContainer>
+    </Layout>
 )}
 
 export default GalleryPage;
