@@ -8,11 +8,6 @@ import SEO from "../components/SEO"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 
-
-const content = css`
-  padding: 5%;
-`;
-
 const AboutPage = () => {
 
   const { allSanityQuotes, allSanityBiography }  = useStaticQuery(
@@ -50,20 +45,21 @@ const AboutPage = () => {
     }
   }
 
-  const allQuotes = allSanityQuotes.edges.map(show => show.node);
-  const bioTitle = allSanityBiography.edges[0].node.title;
+  const allQuotes = allSanityQuotes.edges ? allSanityQuotes.edges.map(show => show.node) : false;
+  const bioTitle = allSanityBiography.edges[0].node.title || null;
+  const bioContent = allSanityBiography.edges[0].node._rawBiography || null;
   
   return (
   <Layout>
     <SEO title="About" />
     <ContentWidthContainer css={css`margin-top: 100px;`}>
       <PageTitle pageTitle={'About'} />
-      <div css={content}>
+      <div css={css`padding: 5%;`}>
         <h2 css={css`text-align: center; text-transform: uppercase;`}>{bioTitle}</h2>
         <h3 css={css`text-align: center; padding: 0rem 0 2rem 0;`}>
-          <BlockContent blocks={allSanityBiography.edges[0].node._rawBiography} serializers={serializers} />
+          <BlockContent blocks={bioContent} serializers={serializers} />
         </h3>
-        {allQuotes.map(quote => (
+        {allQuotes && allQuotes.map(quote => (
           <div css={css`margin-top: 1.5rem;`}>
             <p css={css`text-align: center; font-style: italic;`}>{`"${quote.quote}"`}</p>
             <p css={css`text-align: center; font-weight: 700;`}>{`-${quote.referrer}`}</p>

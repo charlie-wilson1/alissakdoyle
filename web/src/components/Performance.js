@@ -3,7 +3,6 @@ import { css } from '@emotion/core';
 
 const Performance = ({title, role, theatre, director}) => {
   const directorText = director.join(', '); 
-  console.log()
   return (
     <div css={css`margin-bottom: 2rem;`}>
       <p css={css`font-weight: 800; margin-bottom: 0.6rem;`}>{title}

@@ -83,7 +83,7 @@ const GalleryPage = () => {
         }
       }
     `
-  )
+  ) || null;
 
   return (
     <Layout>
@@ -92,7 +92,7 @@ const GalleryPage = () => {
         <PageTitle pageTitle={'Gallery'} />
         <div css={content}>
           <div css={gallery}>
-            {galleryImages.allSanityGallery.edges.map(edge => (
+            {galleryImages && galleryImages.allSanityGallery.edges.map(edge => (
               <div className='photo' key={edge.node.id}>
                 <Lightbox imageAssets={edge.node.galleryImage.asset} />
                 <Img 
