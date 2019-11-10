@@ -2,7 +2,7 @@ import { MdCollections } from "react-icons/md";
 
 export default {
   title: "Gallery Media",
-  name: 'gallery',
+  name: 'galleryMediaedia',
   type: 'document',
   icon: MdCollections,
   fields: [
@@ -19,7 +19,7 @@ export default {
     {
       title: 'Gallery Image',
       name: 'galleryImage',
-      type: 'photo',
+      type: 'img',
     },
   ]
 };

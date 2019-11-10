@@ -20,7 +20,7 @@ export default {
     {
       title: "Featured Image",
       name: "featureImage",
-      type: "photo",
+      type: "img",
       description: "The image that will appear on the main page, above the resume."
     },
   ]

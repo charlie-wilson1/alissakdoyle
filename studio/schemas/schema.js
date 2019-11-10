@@ -8,11 +8,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import directing from './directing';
 import quote from './quote';
 import show from './show';
-import media from './media';
 import bio from './bio';
 import settings from './settings';
-import photo from './photo';
+import img from './img';
 import resume from './resume';
+import gallery from './gallery';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,10 +25,10 @@ export default createSchema({
     show,
     directing,
     quote,
-    media,
     bio,
     settings,
-    photo,
+    img,
     resume,
+    gallery,
   ])
 })

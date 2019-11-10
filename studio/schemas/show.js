@@ -1,7 +1,7 @@
 import { MdRecordVoiceOver } from "react-icons/md";
 
 export default {
-  title: "Performance",
+  title: "Performances",
   name: 'Performance',
   type: 'document',
   icon: MdRecordVoiceOver,
