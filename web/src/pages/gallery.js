@@ -27,7 +27,7 @@ const gallery = css`
 
 const GalleryPage = () => {
 
-  const galleryImages = useStaticQuery(
+  const galleryData = useStaticQuery(
     graphql`
       query GalleryQuery {
         allSanityGallery {
@@ -36,6 +36,7 @@ const GalleryPage = () => {
               id
               galleryImage {
                 asset {
+                  id
                   thumbnail: fixed(width: 300, height: 300) {
                     src
                     srcSet
@@ -83,8 +84,9 @@ const GalleryPage = () => {
         }
       }
     `
-  ) || null;
-
+  );
+  const galleryImages = galleryData.allSanityGallery.edges[0].node.galleryImage;
+  
   return (
     <Layout>
       <SEO title="About" />
@@ -92,11 +94,11 @@ const GalleryPage = () => {
         <PageTitle pageTitle={'Gallery'} />
         <div css={content}>
           <div css={gallery}>
-            {galleryImages && galleryImages.allSanityGallery.edges.map(edge => (
-              <div className='photo' key={edge.node.id}>
-                <Lightbox imageAssets={edge.node.galleryImage.asset} />
+            {galleryImages && galleryImages.map(image => (
+              <div className='photo' key={image.id}>
+                <Lightbox imageAssets={image.asset} />
                 <Img 
-                  fixed={edge.node.galleryImage.asset.thumbnail}
+                  fixed={image.asset.thumbnail}
                   imgStyle={{
                     padding: '5px',
                     boxSizing: 'border-box',
