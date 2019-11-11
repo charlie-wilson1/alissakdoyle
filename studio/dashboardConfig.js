@@ -14,16 +14,10 @@ export default {
       options: {
         title: 'My Netlify deploys',
         sites: [
-          // {
-          //   title: 'Sanity Studio',
-          //   apiId: 'xxxxx-yyyy-zzzz-xxxx-yyyyyyyy',
-          //   buildHookId: 'xxxyyyxxxyyyyxxxyyy',
-          //   name: 'sanity-gatsby-blog-20-studio',
-          // },
           {
             title: 'www.alissakdoyle.com',
-            apiId: '',
-            buildHookId: '',
+            apiId: 'b82411d0-1da5-414f-9a6d-85c99c1b23a4',
+            buildHookId: '5dc49fc185874a7fad9582d1',
             name: 'Deploy alissakdoyle'
           }
         ]
