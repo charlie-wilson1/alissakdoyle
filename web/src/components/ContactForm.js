@@ -50,7 +50,8 @@ const form = css`
 
 const ContactForm = () => {
   return (
-      <form css={form}>
+      <form css={form} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
         <div className='container'>
           <label for="first-name">First Name *</label>
           <input type='text' name='first-name' required></input>
