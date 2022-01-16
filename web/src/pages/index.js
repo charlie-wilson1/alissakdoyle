@@ -1,9 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { css } from '@emotion/core';
+import { jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+// import SEO from "../components/SEO"
 import Image from '../components/Image';
 import PageTitle from '../components/styledComponents/PageTitle';
 import PageH1 from '../components/styledComponents/PageH1';
@@ -67,7 +68,7 @@ const IndexPage = () => {
 
   return (
   <Layout>
-    <SEO title="Home" />
+    {/* <SEO title="Home" /> */}
     <ContentWidthContainer>
       <div css={shrinkingImage}>
         <Image />

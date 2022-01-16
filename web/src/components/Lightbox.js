@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import Img from "gatsby-image";
 
 const lightboxShown = css`
