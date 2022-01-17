@@ -1,15 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { jsx } from '@emotion/react'
 import { css } from '@emotion/react'
 
 import Layout from "../components/Layout"
-// import SEO from "../components/SEO"
+import SEO from "../components/SEO"
 import Image from '../components/Image';
 import PageTitle from '../components/styledComponents/PageTitle';
 import PageH1 from '../components/styledComponents/PageH1';
 import Performance from '../components/Performance';
-import DirectingGig from '../components/DirectingGig';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 
 const shrinkingImage = css`
@@ -28,8 +26,8 @@ const shrinkingImage = css`
   }
 `;
 
-const IndexPage = () => {
-  const {allSanityPerformance, allSanityDirecting} = useStaticQuery(
+const ActorPage = () => {
+  const { allSanityPerformance } = useStaticQuery(
     graphql`
       query AllPerformances {
         allSanityPerformance {
@@ -41,17 +39,6 @@ const IndexPage = () => {
               theatre
               director
               startDate
-            }
-          }
-        }
-        allSanityDirecting {
-          edges {
-            node {
-              id
-              startDate
-              theatre
-              title
-              role
             }
           }
         }
@@ -67,15 +54,15 @@ const IndexPage = () => {
   });
 
   return (
-  <Layout>
-    {/* <SEO title="Home" /> */}
-    <ContentWidthContainer>
-      <div css={shrinkingImage}>
-        <Image />
-      </div>
-      <PageTitle pageTitle={'Resume'} />
-      <div css={css`padding: 5%;`}>
-        <PageH1 text={'Regional Theatre'} />
+    <Layout>
+      <SEO title="Home" />
+      <ContentWidthContainer>
+        <div css={shrinkingImage}>
+          <Image />
+        </div>
+        <PageTitle pageTitle={'Resume'} />
+        <div css={css`padding: 5%;`}>
+          <PageH1 text={'Regional Theatre'} />
           {allShows.map(show => (
             <Performance
               id={show.id}
@@ -86,23 +73,10 @@ const IndexPage = () => {
               key={show.id}
             />
           ))}
-        <PageH1 text={'Teaching & Directing'} />
-          {allDirecting.map(gig => (
-            <DirectingGig 
-              title={gig.title}
-              theatre={gig.theatre}
-              role={gig.role}
-            />
-          ))}
-        <PageH1 text={'Education & Training'} />
-        <div css={css`p {margin: 0.6rem 0;}`}>
-          <p css={css`font-weight: 800;`}>Bachelor of Arts, Theatre</p>
-          <p>Emphasis in Acting</p>
-          <p>California State University Sacramento</p>
         </div>
-      </div>
-    </ContentWidthContainer>  
-  </Layout>
-)}
+      </ContentWidthContainer>
+    </Layout>
+  )
+}
 
-export default IndexPage
+export default ActorPage
