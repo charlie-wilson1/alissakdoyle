@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/react'
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import Image from '../components/Image';
 import PageTitle from '../components/styledComponents/PageTitle';
 import PageH1 from '../components/styledComponents/PageH1';
@@ -51,12 +51,12 @@ const ActorPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Actor" />
       <ContentWidthContainer>
         <div css={shrinkingImage}>
           <Image />
         </div>
-        <PageTitle pageTitle={'Resume'} />
+        <PageTitle pageTitle={'Actor'} />
         <div css={css`padding: 5%;`}>
           <PageH1 text={'Regional Theatre'} />
           {allShows.map(show => (

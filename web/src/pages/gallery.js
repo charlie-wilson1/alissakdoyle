@@ -2,7 +2,7 @@ import React from "react"
 import { css } from '@emotion/react';
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 import { useStaticQuery, graphql } from "gatsby";
@@ -56,7 +56,7 @@ const GalleryPage = () => {
 
   return (
     <Layout>
-      <SEO title="About" />
+      <Seo title="About" />
       <ContentWidthContainer css={css`margin-top: 100px;`}>
         <PageTitle pageTitle={'Gallery'} />
         <div css={content}>

@@ -15,7 +15,7 @@ export default {
       title: "Meta Tags",
       name: "tags",
       type: "string",
-      description: "Tags that describe your website that you want injected into the metadata for SEO.",
+      description: "Tags that describe your website that you want injected into the metadata for Seo.",
     },
     {
       title: "Featured Image",

@@ -36,7 +36,8 @@ const navStyles = css`
 const Nav = () => {
   return (
     <nav css={navStyles}>
-      <Link to='/'><h3>Resume</h3></Link>
+      <Link to='/'><h3>Actor</h3></Link>
+      <Link to='/teacher'><h3>Teacher/Director</h3></Link>
       <Link to='/about'><h3>About</h3></Link>
       <Link to='/gallery'><h3>Gallery</h3></Link>
       <Link to='/contact'><h3 css={css`text-align: center;`}>Contact Me</h3></Link>
