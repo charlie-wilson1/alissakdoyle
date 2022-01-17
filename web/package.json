@@ -1,50 +1,33 @@
 {
-  "name": "alissakdoyle",
+  "name": "alissakdoyle.com",
+  "version": "1.0.0",
   "private": true,
-  "description": "Resume for Alissa K Doyle",
-  "version": "0.1.0",
-  "author": "Ryan Doyle <doylecodes@gmail.com>",
-  "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.22",
-    "@sanity/block-content-to-react": "^2.0.7",
-    "eslint-config-react-app": "^5.0.2",
-    "gatsby": "^2.17.10",
-    "gatsby-image": "^2.2.29",
-    "gatsby-plugin-emotion": "^4.1.13",
-    "gatsby-plugin-manifest": "^2.2.23",
-    "gatsby-plugin-offline": "^3.0.16",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sharp": "^2.2.31",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-source-sanity": "^5.0.3",
-    "gatsby-transformer-sharp": "^2.3.2",
-    "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
-  },
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  },
+  "description": "alissakdoyle.com",
+  "author": "Ryan Doyle",
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "clean": "gatsby clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "gatsby": "^4.5.2",
+    "gatsby-plugin-emotion": "^7.5.0",
+    "gatsby-plugin-image": "^2.5.1",
+    "gatsby-plugin-react-helmet": "^5.5.0",
+    "gatsby-plugin-sharp": "^4.5.1",
+    "gatsby-source-filesystem": "^4.5.1",
+    "gatsby-source-sanity": "^7.3.2",
+    "gatsby-transformer-sharp": "^4.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
   }
 }

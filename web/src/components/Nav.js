@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby"
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 const navStyles = css`
   position: fixed;
@@ -37,7 +37,7 @@ const Nav = () => {
   return (
     <nav css={navStyles}>
       <Link to='/'><h3>Actor</h3></Link>
-      <Link to='/teacher'><h3>Teacher</h3></Link>
+      <Link to='/teacher'><h3>Teacher/Director</h3></Link>
       <Link to='/about'><h3>About</h3></Link>
       <Link to='/gallery'><h3>Gallery</h3></Link>
       <Link to='/contact'><h3 css={css`text-align: center;`}>Contact Me</h3></Link>

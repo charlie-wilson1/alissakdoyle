@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Image = () => {
   const data = useStaticQuery(graphql`
@@ -8,17 +8,10 @@ const Image = () => {
       allSanitySettings {
         edges {
           node {
+            id
             featureImage {
               asset {
-                fluid(maxWidth: 1000) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
               }
             }
           }
@@ -27,7 +20,7 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.allSanitySettings.edges[0].node.featureImage.asset.fluid} imgStyle={{top: '-25%'}} />
+  return <GatsbyImage image={data.allSanitySettings?.edges[0].node.featureImage.asset.gatsbyImageData} imgStyle={{ top: '-25%' }} />
 }
 
 export default Image

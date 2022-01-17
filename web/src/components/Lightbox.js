@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { css } from '@emotion/core';
-import Img from "gatsby-image";
+import { css } from '@emotion/react';
+import { GatsbyImage } from "gatsby-plugin-image"
+
 
 const lightboxShown = css`
   position: fixed;
@@ -23,7 +24,7 @@ const lightboxHidden = css`
   z-index: 1;
 `;
 
-const Lightbox = ({imageAssets}) => {
+const Lightbox = ({ imageAssets }) => {
   const [lightbox, toggleLightbox] = useState(false);
   const [windowWidth, setwindowWidth] = useState(0);
 
@@ -32,15 +33,15 @@ const Lightbox = ({imageAssets}) => {
   }, [])
 
   return (
-    <div css={lightbox ? lightboxShown : lightboxHidden} onClick={ (e) => {toggleLightbox(!lightbox)} } >
+    <div css={lightbox ? lightboxShown : lightboxHidden} onClick={(e) => { toggleLightbox(!lightbox) }} >
       {(lightbox && windowWidth >= 700) && (
-        <Img fixed={imageAssets.large} key={imageAssets.large.src}></Img>
+        <GatsbyImage image={imageAssets.large} key={imageAssets.large.src}></GatsbyImage>
       )}
       {(lightbox && (windowWidth >= 500 && windowWidth < 700)) && (
-        <Img fixed={imageAssets.tablet} key={imageAssets.tablet.src}></Img>
+        <GatsbyImage image={imageAssets.tablet} key={imageAssets.tablet.src}></GatsbyImage>
       )}
       {(lightbox && windowWidth < 500) && (
-        <Img fixed={imageAssets.mobile} key={imageAssets.mobile.src}></Img>
+        <GatsbyImage image={imageAssets.mobile} key={imageAssets.mobile.src}></GatsbyImage>
       )}
     </div>
   );

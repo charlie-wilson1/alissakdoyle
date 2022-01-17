@@ -1,58 +1,38 @@
 module.exports = {
   siteMetadata: {
-    title: `Alissa K. Doyle`,
-    description: `Personal portfolio for actor and director Alissa K Doyle in Sacramento, CA.`,
-    author: `@ryanmdoyle`,
+    title: `Alissa K Doyle`,
+    siteUrl: `https://www.alissakdoyle.com`,
+    description: `Actress & Educator Alissa K Doyle`,
+    author: `Ryan M Doyle`,
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
+        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
+        // The values for each key in this example are the defaults the plugin uses.
+        sourceMap: true,
+        autoLabel: "dev-only",
+        labelFormat: `[local]`,
+        cssPropOptimization: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-source-sanity`,
       options: {
-        google: {
-          families: ['Open Sans:400, 700, 800']
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-source-sanity',
-      options: {
-        projectId: '8n7w4ele',
-        dataset: 'production',
+        projectId: `8n7w4ele`,
+        dataset: `production`,
         // a token with read permissions is required
         // if you have a private dataset
-        token: process.env.MY_SANITY_TOKEN,
+        // token: process.env.SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: 'default',
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `alissakdoyle`,
-        short_name: `alissakdoyle`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/a-favi.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
+  ]
 }

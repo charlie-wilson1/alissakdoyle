@@ -1,10 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import BlockContent from '@sanity/block-content-to-react';
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import PageTitle from '../components/styledComponents/PageTitle';
 import PageH1 from '../components/styledComponents/PageH1';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
@@ -52,7 +52,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <SEO title="About" />
+      <Seo title="About" />
       <ContentWidthContainer css={css`margin-top: 100px;`}>
         <PageTitle pageTitle={'About'} />
         <div css={css`padding: 5%;`}>
@@ -60,11 +60,11 @@ const AboutPage = () => {
           <h3 css={css`text-align: center; padding: 0rem 0 2rem 0;`}>
             <BlockContent blocks={bioContent} serializers={serializers} />
           </h3>
-          <PageH1 text={'In The Media'} />
+          <PageH1 text={'In the Media'} />
           {allQuotes && allQuotes.map(quote => (
             <div css={css`margin-top: 1.5rem;`}>
-              <p css={css` font-style: italic; font-weight: 700; font-size: 1.1rem`}>{`"${quote.quote}"`}</p>
-              <p css={css`padding-left:3rem;`}>{`-${quote.referrer}`}</p>
+              <p css={css`text-align: center; font-style: italic;`}>{`"${quote.quote}"`}</p>
+              <p css={css`text-align: center; font-weight: 700;`}>{`-${quote.referrer}`}</p>
             </div>
           ))}
           <PageH1 text={'Education & Training'} />
