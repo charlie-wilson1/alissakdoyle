@@ -2,13 +2,13 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/react';
 
-import Layout from "../../../web-old/src/components/Layout"
-import SEO from "../../../web-old/src/components/SEO"
-import Image from '../../../web-old/src/components/Image';
-import PageTitle from '../../../web-old/src/components/styledComponents/PageTitle';
-import PageH1 from '../../../web-old/src/components/styledComponents/PageH1';
-import DirectingGig from '../../../web-old/src/components/DirectingGig';
-import ContentWidthContainer from '../../../web-old/src/components/styledComponents/ContentWidthContainer';
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import Image from '../components/Image';
+import PageTitle from '../components/styledComponents/PageTitle';
+import PageH1 from '../components/styledComponents/PageH1';
+import DirectingGig from '../components/DirectingGig';
+import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 
 const shrinkingImage = css`
   position: relative;

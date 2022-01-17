@@ -49,10 +49,6 @@ const ActorPage = () => {
     return (a.startDate > b.startDate) ? -1 : ((a.startDate < b.startDate) ? 1 : 0);
   });
 
-  const allDirecting = allSanityDirecting.edges.map(direct => direct.node).sort((a, b) => {
-    return (a.startDate > b.startDate) ? -1 : ((a.startDate < b.startDate) ? 1 : 0);
-  });
-
   return (
     <Layout>
       <SEO title="Home" />

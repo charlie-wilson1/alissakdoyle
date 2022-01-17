@@ -6,7 +6,6 @@ import SEO from "../components/SEO"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 import { useStaticQuery, graphql } from "gatsby";
-// import Img from "gatsby-image";
 import { GatsbyImage } from "gatsby-plugin-image"
 import Lightbox from '../components/Lightbox';
 
