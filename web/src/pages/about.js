@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import BlockContent from '@sanity/block-content-to-react';
 
 import Layout from "../components/Layout"
-// import SEO from "../components/SEO"
+import SEO from "../components/SEO"
 import PageTitle from '../components/styledComponents/PageTitle';
 import ContentWidthContainer from '../components/styledComponents/ContentWidthContainer';
 
@@ -51,7 +51,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      {/* <SEO title="About" /> */}
+      <SEO title="About" />
       <ContentWidthContainer css={css`margin-top: 100px;`}>
         <PageTitle pageTitle={'About'} />
         <div css={css`padding: 5%;`}>
